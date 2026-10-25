@@ -1,0 +1,26 @@
+# Maven / Java
+target/
+*.class
+*.jar
+*.war
+hs_err_pid*
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets / local env (never commit)
+.env
+*.env
+*.pem
+*.key
+secrets/
