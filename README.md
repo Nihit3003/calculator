@@ -141,3 +141,4 @@ git checkout main && git pull
 - **Idempotent redeploys:** fixed project/container names; `up -d` only recreates containers whose image changed; the unique build-number tag prevents stale images.
 - **Common failures:** `docker: permission denied` (jenkins not in docker group); `mvn: not found` (tool missing on agent); port already in use (change `APP_PORT`/`PROXY_PORT`); webhook not firing for local Jenkins (use ngrok or Poll SCM); push `denied` (wrong token scope/username); no email (SMTP/App Password not configured).
 
+
