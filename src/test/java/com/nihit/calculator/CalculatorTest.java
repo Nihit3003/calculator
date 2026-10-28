@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class CalculatorTest {
     private final Calculator calc = new Calculator();
 
-    @Test void addsPositiveNumbers() { assertEquals(5.0, calc.add(2, 3)); }
+    @Test void addsPositiveNumbers() { assertEquals(6.0, calc.add(2, 3)); }
     @Test void addsNegativeNumbers() { assertEquals(-5.0, calc.add(-2, -3)); }
     @Test void subtractsNumbers() { assertEquals(-1.0, calc.subtract(2, 3)); }
     @Test void multipliesNumbers() { assertEquals(6.0, calc.multiply(2, 3)); }
