@@ -103,8 +103,8 @@ pipeline {
                     [ "$APP" = "healthy" ] && [ "$PRX" = "healthy" ] || { docker compose logs --tail=50; exit 1; }
 
                     # End-to-end check THROUGH the proxy (runs inside the proxy container; no curl needed on agent)
-                    docker exec calculator-proxy wget -qO- http://localhost/health
-                    docker exec calculator-proxy wget -qO- "http://localhost/api/v1/add?a=2&b=3"
+                    docker exec calculator-proxy wget -qO- http://127.0.0.1/health
+                    docker exec calculator-proxy wget -qO- "http://127.0.0.1/api/v1/add?a=2&b=3"
                     docker compose ps
                 '''
             }
