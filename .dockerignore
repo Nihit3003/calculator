@@ -7,6 +7,5 @@ target
 Jenkinsfile
 docker-compose.yml
 nginx
-report
 .env
 *.env
