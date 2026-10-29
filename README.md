@@ -126,10 +126,6 @@ docker compose ps          # both services should report "healthy"
 docker compose down        # stop and remove it
 ```
 
-| Access | URL |
-|---|---|
-| Directly to the app | http://localhost:8081 |
-| Through Nginx | http://localhost:8082 |
 
 Nginx starts only after the app reports healthy. Configuration is read from environment variables, with these defaults:
 
