@@ -30,7 +30,7 @@ class MainCliTest {
 
     @Test void divideByZeroExitsOneWithMessage() {
         assertEquals(1, run("divide", "1", "0"));
-        assertEquals("Error: Division by zero is not allowed", err());
+        assertEquals("Error: Cannot divide by zero", err());
         assertEquals("", out());
     }
 

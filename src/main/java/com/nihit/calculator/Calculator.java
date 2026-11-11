@@ -21,7 +21,7 @@ public final class Calculator {
     /** @throws ArithmeticException if {@code b} is zero */
     public double divide(double a, double b) {
         if (b == 0) {
-            throw new ArithmeticException("Division by zero is not allowed");
+            throw new ArithmeticException("Cannot divide by zero");
         }
         return a / b;
     }

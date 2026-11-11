@@ -17,7 +17,7 @@ class CalculatorServiceTest {
     @Test
     void divideByZeroGivesClearError() {
         CalculationException ex = assertThrows(CalculationException.class, () -> service.calculate("divide", "1", "0"));
-        assertEquals("Division by zero is not allowed", ex.getMessage());
+        assertEquals("Cannot divide by zero", ex.getMessage());
     }
 
     @Test

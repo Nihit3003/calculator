@@ -64,7 +64,7 @@ class CalculatorHttpServerTest {
     @Test void divideByZeroIs400() throws Exception {
         HttpResponse<String> r = get("/api/v1/divide?a=1&b=0");
         assertEquals(400, r.statusCode());
-        assertEquals("{\"error\":\"Division by zero is not allowed\"}", r.body());
+        assertEquals("{\"error\":\"Cannot divide by zero\"}", r.body());
     }
 
     @Test void missingParameterIs400() throws Exception {
