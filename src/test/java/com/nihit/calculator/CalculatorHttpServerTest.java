@@ -36,6 +36,12 @@ class CalculatorHttpServerTest {
         assertEquals("{\"status\":\"UP\"}", r.body());
     }
 
+    @Test void versionEndpointReportsAppVersion() throws Exception {
+        HttpResponse<String> r = get("/version");
+        assertEquals(200, r.statusCode());
+        assertEquals("{\"version\":\"" + AppInfo.VERSION + "\"}", r.body());
+    }
+
     @Test void addReturnsJson() throws Exception {
         HttpResponse<String> r = get("/api/v1/add?a=2&b=3");
         assertEquals(200, r.statusCode());

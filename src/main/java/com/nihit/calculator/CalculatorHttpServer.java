@@ -30,6 +30,7 @@ public final class CalculatorHttpServer {
         server = HttpServer.create(new InetSocketAddress(port), 0);
         server.setExecutor(Executors.newFixedThreadPool(4));
         server.createContext("/health", this::handleHealth);
+        server.createContext("/version", this::handleVersion);
         server.createContext("/api/v1/", this::handleCalculate);
         server.createContext("/", ex -> send(ex, 404, "{\"error\":\"Not found\"}"));
     }
@@ -52,6 +53,14 @@ public final class CalculatorHttpServer {
             return;
         }
         send(ex, 200, "{\"status\":\"UP\"}");
+    }
+
+    private void handleVersion(HttpExchange ex) throws IOException {
+        if (!"GET".equals(ex.getRequestMethod())) {
+            send(ex, 405, "{\"error\":\"Method not allowed\"}");
+            return;
+        }
+        send(ex, 200, "{\"version\":\"" + AppInfo.VERSION + "\"}");
     }
 
     private void handleCalculate(HttpExchange ex) throws IOException {
